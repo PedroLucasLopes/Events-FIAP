@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a, a:hover, a:active, a:focus {
+  text-decoration: none;
+  border: none;
+  color: inherit;
+}
