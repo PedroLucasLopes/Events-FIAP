@@ -6,6 +6,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Main from "./pages/Main/Main.tsx";
 import SignUp from "./pages/SignUp/SignUp.tsx";
 import "./index.css";
+import FavoriteEvent from "./pages/FavoriteEvent/FavoriteEvent.tsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUp />,
+  },
+  {
+    path: "/favorite",
+    element: <FavoriteEvent />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

@@ -6,8 +6,8 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  Checkbox,
 } from "@chakra-ui/react";
-import ButtonForm from "../Button/Button";
 
 const ModalForm = ({
   title,
@@ -27,11 +27,10 @@ const ModalForm = ({
         <ModalHeader>{title}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>{description}</ModalBody>
-
-        <ModalFooter>
-          <ButtonForm color="blue" size="lg" onClick={onClose} type={"button"}>
-            Fechar
-          </ButtonForm>
+        <ModalFooter justifyContent="left" alignItems="center">
+          <Checkbox fontWeight="bold">
+            Li e aceito o uso das minhas informações
+          </Checkbox>
         </ModalFooter>
       </ModalContent>
     </Modal>
