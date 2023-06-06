@@ -1,7 +1,6 @@
 import React from "react";
 import MainTitle from "../../components/MainTitle/MainTitle";
 import ActionCard from "../../components/ActionCard/ActionCard";
-// import Slider from "../../components/Slider/Slider";
 import control from "../../assets/capa-joystick.png";
 import control2 from "../../assets/example.png";
 import Event from "../../assets/Event.tsx";
@@ -9,9 +8,11 @@ import Talk from "../../assets/Talk.tsx";
 import * as S from "./styles/styles.tsx";
 import CourseCard from "../../components/CourseCard/CourseCard.tsx";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const Main = () => {
-  // const sliderImage = [control, control2];
+  const slides = [control, control2];
   const events = [
     {
       children: "Oficina de jogos",
@@ -27,7 +28,13 @@ const Main = () => {
   return (
     <S.MainContainer>
       <MainTitle user={"Pedro"} />
-      {/* <Slider slider={sliderImage} /> */}
+      <Swiper className="mySwiper">
+        {slides.map((slide, i) => (
+          <SwiperSlide key={i}>
+            <S.ImageSlide src={slide} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
       <S.ActionBox>
         <ActionCard
           children="Criar Evento"

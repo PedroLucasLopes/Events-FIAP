@@ -62,3 +62,11 @@ export const CardContainer = styled.div`
     }
   }
 `;
+
+export const ImageSlide = styled.img`
+  width: 50vw;
+  height: 25rem;
+  margin: 0 auto;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+`;

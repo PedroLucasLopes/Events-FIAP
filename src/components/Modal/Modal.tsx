@@ -14,11 +14,14 @@ const ModalForm = ({
   description,
   isOpen,
   onClose,
+  onChange,
 }: {
   title: string;
   description: string;
   isOpen: boolean;
   onClose: () => void;
+  onChange?: () => void;
+  setChecked?: () => React.Dispatch<boolean>;
 }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -28,7 +31,12 @@ const ModalForm = ({
         <ModalCloseButton />
         <ModalBody>{description}</ModalBody>
         <ModalFooter justifyContent="left" alignItems="center">
-          <Checkbox fontWeight="bold">
+          <Checkbox
+            fontWeight="bold"
+            onChange={(e) => {
+              e.currentTarget.checked ? onChange : "";
+            }}
+          >
             Li e aceito o uso das minhas informações
           </Checkbox>
         </ModalFooter>

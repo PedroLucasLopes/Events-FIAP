@@ -1,5 +1,5 @@
-import { Heading, VStack, Text, HStack } from "@chakra-ui/react";
 import React from "react";
+import { Heading, VStack, Text, HStack } from "@chakra-ui/react";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import ActionCard from "../../components/ActionCard/ActionCard";
 import ButtonForm from "../../components/Button/Button";
@@ -33,20 +33,31 @@ const FavoriteEvent = () => {
     },
   ];
   return (
-    <VStack w="100%" align="center" justify="center">
+    <VStack
+      m="0 auto"
+      maxWidth="768px"
+      w="100%"
+      align="center"
+      justify="center"
+    >
       <Heading w="100%">
         <PageTitle>Qual o seu tipo de evento favorito?</PageTitle>
       </Heading>
-      <VStack w="100%" align="left" pl="1rem" overflow="scroll">
+      <VStack w="100%" align="left" pl="1rem">
         <Text fontWeight="bold" pt="2rem" fontSize="1.5rem">
           Eventos Culturais
         </Text>
-        <HStack w="100%" flex="wrap">
+        <HStack
+          w="100%"
+          overflow="scroll"
+          overflowY="hidden"
+          overflowX={window.innerWidth >= 768 ? "hidden" : undefined}
+        >
           {cardData.map((data) => (
             <ActionCard
               path={`${data.id}`}
               svg={undefined}
-              backgroundColor="#6666ff"
+              backgroundColor="#0095FF"
               color="#fefefe"
               height="4.5rem"
               width="6rem"
@@ -60,12 +71,18 @@ const FavoriteEvent = () => {
         <Text fontWeight="bold" pt="2rem" fontSize="1.5rem">
           Eventos de jogos
         </Text>
-        <HStack w="100%" flex="wrap" overflow="scroll">
+        <HStack
+          w="100%"
+          flex="wrap"
+          overflow="scroll"
+          overflowY="hidden"
+          overflowX={window.innerWidth >= 768 ? "hidden" : undefined}
+        >
           {cardData.map((data) => (
             <ActionCard
               path={`${data.id}`}
               svg={undefined}
-              backgroundColor="#6666ff"
+              backgroundColor="#0095FF"
               color="#fefefe"
               height="4.5rem"
               width="6rem"
@@ -79,12 +96,18 @@ const FavoriteEvent = () => {
         <Text fontWeight="bold" pt="2rem" fontSize="1.5rem">
           Eventos de culinária
         </Text>
-        <HStack w="100%" flex="wrap" overflow="scroll">
+        <HStack
+          w="100%"
+          flex="wrap"
+          overflow="scroll"
+          overflowY="hidden"
+          overflowX={window.innerWidth >= 768 ? "hidden" : undefined}
+        >
           {cardData.map((data) => (
             <ActionCard
               path={`${data.id}`}
               svg={undefined}
-              backgroundColor="#6666ff"
+              backgroundColor="#0095FF"
               color="#fefefe"
               height="4.5rem"
               width="6rem"

@@ -3,5 +3,5 @@ export type InputTypes = {
   placeholder?: string;
   size?: "xs" | "xs" | "md" | "lg";
   variant?: "outline" | "filled" | "flushed" | "unstyled";
-  onChange?: () => void;
+  onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
 };
