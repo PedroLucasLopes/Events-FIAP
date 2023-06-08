@@ -26,20 +26,12 @@ const SignUp = () => {
   const [birthDate, setBirthDate] = React.useState<string>("");
   const [tri, setTri] = React.useState<string>("");
   const [zipCode, setZipcode] = React.useState<string>("");
+  const [password, setPassword] = React.useState<string>("");
   const [signUp, setSignUp] = React.useState<IsignUp>(defaultData);
 
   const onHandleSubmit = () => {
-    setSignUp({
-      username: username,
-      surname: surname,
-      email: email,
-      birthDate: birthDate,
-      tri: tri,
-      zipcode: zipCode,
-    });
-
-    localStorage.setItem("login", "logado");
-    navigate("/");
+    localStorage.setItem("user", `username: ${email}, password: ${password}`);
+    navigate("/login");
   };
 
   return (
@@ -96,6 +88,14 @@ const SignUp = () => {
             setZipcode(e.currentTarget.value);
           }}
         />
+        <InputForm
+          type="password"
+          placeholder="Senha"
+          size="lg"
+          onChange={(e) => {
+            setPassword(e.currentTarget.value);
+          }}
+        />
         <ButtonForm
           children="Continuar"
           type="button"
@@ -111,7 +111,7 @@ const SignUp = () => {
         description="Fazemos o uso de dados pessoais e localização, para maior precisão nas buscas e para segurança de nossos usuários."
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        onChange={onHandleSubmit}
+        onClick={onHandleSubmit}
       />
     </S.MainContainer>
   );

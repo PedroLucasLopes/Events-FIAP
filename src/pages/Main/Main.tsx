@@ -10,6 +10,7 @@ import CourseCard from "../../components/CourseCard/CourseCard.tsx";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { HStack } from "@chakra-ui/react";
 
 const Main = () => {
   const slides = [control, control2];
@@ -25,9 +26,26 @@ const Main = () => {
       src: control2,
     },
   ];
+
+  function onClick() {
+    localStorage.removeItem("login");
+  }
+
   return (
     <S.MainContainer>
-      <MainTitle user={"Pedro"} />
+      <HStack justify="space-between">
+        <MainTitle />
+        {localStorage.getItem("login") ? (
+          <Link to={"/login"} onClick={onClick}>
+            Sair
+          </Link>
+        ) : (
+          <HStack>
+            <Link to="/login">Logar</Link>
+            <Link to="/signup">Cadastrar</Link>
+          </HStack>
+        )}
+      </HStack>
       <Swiper className="mySwiper">
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>

@@ -23,4 +23,5 @@ export type ButtonTypes = {
   variant?: "solid" | "outline" | "ghost" | "link";
   type: "button" | "submit";
   onClick?: React.Dispatch;
+  isDisabled?: boolean;
 };

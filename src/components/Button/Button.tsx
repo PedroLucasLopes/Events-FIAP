@@ -3,11 +3,12 @@ import * as S from "./styles/styles";
 
 const ButtonForm = ({
   children,
-  color,
+  color = "blue",
   size,
   variant,
   type,
   onClick,
+  isDisabled,
 }: ButtonTypes) => {
   return (
     <S.Btn
@@ -15,7 +16,8 @@ const ButtonForm = ({
       colorScheme={color}
       size={size}
       variant={variant}
-      onClick={() => onClick && onClick()}
+      onClick={() => onClick()}
+      disabled={isDisabled && isDisabled ? true : false}
     >
       {children}
     </S.Btn>
