@@ -1,4 +1,3 @@
-import React from "react";
 import MainTitle from "../../components/MainTitle/MainTitle";
 import ActionCard from "../../components/ActionCard/ActionCard";
 import control from "../../assets/capa-joystick.png";

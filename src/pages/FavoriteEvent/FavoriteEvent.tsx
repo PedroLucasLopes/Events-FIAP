@@ -1,4 +1,3 @@
-import React from "react";
 import { Heading, VStack, Text, HStack } from "@chakra-ui/react";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import ActionCard from "../../components/ActionCard/ActionCard";

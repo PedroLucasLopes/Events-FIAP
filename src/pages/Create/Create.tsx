@@ -1,4 +1,3 @@
-import React from "react";
 import CreateLayout from "./CreateLayout";
 
 const Create = () => {

@@ -4,17 +4,7 @@ import InputForm from "../../components/Input/Input";
 import ButtonForm from "../../components/Button/Button";
 import * as S from "./styles/styles";
 import ModalForm from "../../components/Modal/Modal";
-import { defaultData } from "./defaultData";
 import { useNavigate } from "react-router-dom";
-
-interface IsignUp {
-  username: string;
-  surname: string;
-  email: string;
-  birthDate: string;
-  tri: string;
-  zipcode: string;
-}
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -27,10 +17,13 @@ const SignUp = () => {
   const [tri, setTri] = React.useState<string>("");
   const [zipCode, setZipcode] = React.useState<string>("");
   const [password, setPassword] = React.useState<string>("");
-  const [signUp, setSignUp] = React.useState<IsignUp>(defaultData);
 
   const onHandleSubmit = () => {
     localStorage.setItem("user", `username: ${email}, password: ${password}`);
+    localStorage.setItem(
+      "userInfo",
+      `{username: ${username}, surname: ${surname}, birthDate: ${birthDate}, tri: ${tri}, zipCode: ${zipCode}}`
+    );
     navigate("/login");
   };
 
